@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthUserService } from '@availaoss/agube-rest-api';
+import { AuthService } from '@availaoss/agube-rest-api';
 import { NotificationService } from 'src/app/components/notification/notification.service';
 import { AuthRoute } from '../auth-route';
 import { isEdge } from '../edge-detector';
@@ -9,8 +9,8 @@ import { passwordMatches } from './password-validator';
 
 @Component({
     selector: 'lib-enable-account',
-    templateUrl: './enable-account.component.html',
     styleUrls: ['./enable-account.component.scss'],
+    templateUrl: './enable-account.component.html',
 })
 export class EnableAccountComponent {
     public hidePassword: boolean = true;
@@ -32,7 +32,7 @@ export class EnableAccountComponent {
 
     constructor(
         private formBuilder: FormBuilder,
-        private svcClientService: AuthUserService,
+        private svcAuth: AuthService,
         private router: Router,
         private svcNotification: NotificationService
     ) {
@@ -63,7 +63,7 @@ export class EnableAccountComponent {
 
         this.loading = true;
 
-        this.svcClientService
+        this.svcAuth
             .enableAccount({
                 activation_code: this.activationForm.value.activationCode,
                 username: this.activationForm.value.username,

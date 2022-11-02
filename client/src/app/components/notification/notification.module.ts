@@ -5,9 +5,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
-  declarations: [NotificationComponent],
-  imports: [MatSnackBarModule, MatFormFieldModule],
-  exports: [],
-  providers: [NotificationService],
+    declarations: [NotificationComponent],
+    imports: [MatSnackBarModule, MatFormFieldModule],
+    providers: [NotificationService],
 })
 export class NotificationModule {}

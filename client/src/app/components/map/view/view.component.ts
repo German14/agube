@@ -8,7 +8,6 @@ import { ConfigureView } from './map-location';
 @Component({
     selector: 'app-street-view',
     templateUrl: './view.component.html',
-    styleUrls: ['./view.component.scss'],
 })
 export class StreetViewComponent implements OnInit, AfterViewInit {
     @Input() public configureView: ConfigureView | undefined;

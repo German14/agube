@@ -5,8 +5,8 @@ import { ResidentComponent } from '../resident/resident.component';
 
 @Component({
     selector: 'app-owner',
-    templateUrl: '../resident/resident.component.html',
     styleUrls: ['../info.component.scss'],
+    templateUrl: '../resident/resident.component.html',
 })
 export class OwnerComponent extends ResidentComponent implements OnInit {
     override textOwnerButton: string = '';
@@ -23,7 +23,7 @@ export class OwnerComponent extends ResidentComponent implements OnInit {
         super(svcUser, svcDwelling, router);
     }
 
-    override ngOnInit(): void {
+    public override  ngOnInit(): void {
         if (!this.dwellingId) {
             return;
         }

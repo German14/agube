@@ -31,8 +31,8 @@ import {
 
 @Component({
     selector: 'app-map-location-create',
-    templateUrl: './create.component.html',
     styleUrls: ['./create.component.scss'],
+    templateUrl: './create.component.html',
 })
 export class CreateComponent extends MapComponent implements MapAddressCreator, AfterViewInit, OnInit, OnChanges {
     // -------------------------- MapAddressCreator vars -------------------------- //
@@ -65,7 +65,12 @@ export class CreateComponent extends MapComponent implements MapAddressCreator, 
 
     // -------------------------- Angular Lifecycle -------------------------- //
 
-    constructor(protected override router: Router, protected http: HttpClient, protected formBuilder: FormBuilder, protected svcAddress: AddressService) {
+    constructor(
+        protected override router: Router,
+        protected http: HttpClient,
+        protected formBuilder: FormBuilder,
+        protected svcAddress: AddressService
+    ) {
         super(router);
         this.form = undefined;
         this.addressAlreadyCreated = [];

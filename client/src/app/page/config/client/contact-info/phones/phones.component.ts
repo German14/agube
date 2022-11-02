@@ -7,8 +7,8 @@ import { AccountService } from 'src/app/page/auth/login/service/account.service'
 
 @Component({
     selector: 'app-phones',
-    templateUrl: './phones.component.html',
     styleUrls: ['./phones.component.scss'],
+    templateUrl: './phones.component.html',
 })
 export class PhonesComponent {
     public userId: number = -1;
@@ -80,7 +80,7 @@ export class PhonesComponent {
         }
     }
 
-    public phoneDeleted(phoneId: number | undefined) {
+    public phoneDeleted(phoneId: number | undefined): void {
         if (!phoneId) {
             return;
         }
